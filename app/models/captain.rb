@@ -10,6 +10,7 @@ class Captain < ActiveRecord::Base
   end
   
   def self.motorboat_operators
+    includes(boats: :classifications).where(classifications: {name: "Motorboat"})
   
   def self.talented_seafarers
     includes(boats: :classifications).where(classifications: {name: "Sailboat"} && classifications: {name: "Motorboat"})
