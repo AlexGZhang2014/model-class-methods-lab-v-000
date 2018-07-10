@@ -6,7 +6,7 @@ class Classification < ActiveRecord::Base
     all.uniq
   end
 
-  def longest
+  def self.longest
     includes(:boats).group("length").last
   end
 end
