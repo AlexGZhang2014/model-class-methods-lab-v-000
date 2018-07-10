@@ -27,16 +27,11 @@ class Boat < ActiveRecord::Base
   def self.sailboats
     includes(:classifications).where(:classifications => {:name => "Sailboat"})
   end
+  
+  
 end
 
 describe Boat do
-
-  describe "::sailboats" do
-    it "returns all boats that are sailboats" do
-      boats = ["H 28", "Nacra 17", "49er", "Laser", "Harpoon 4.7", "Sunfish"]
-      expect(Boat.sailboats.pluck(:name)).to eq(boats)
-    end
-  end
 
   describe "::with_three_classifications" do
     it "returns boats with three classifications" do
