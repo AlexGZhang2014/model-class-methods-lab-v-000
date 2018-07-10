@@ -30,6 +30,6 @@ class Boat < ActiveRecord::Base
   end
   
   def self.with_three_classifications
-    joins(classifications).having("COUNT(*) = ?", 3)
+    joins(:classifications).having("COUNT(*) = ?", 3)
   end
 end
