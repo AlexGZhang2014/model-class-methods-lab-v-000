@@ -4,7 +4,7 @@ class Boat < ActiveRecord::Base
   has_many    :classifications, through: :boat_classifications
   
   def self.first_five
-    where()
+    first(5)
   end
 end
 
