@@ -7,6 +7,6 @@ class Classification < ActiveRecord::Base
   end
 
   def longest
-    
+    includes(:boats)
   end
 end
