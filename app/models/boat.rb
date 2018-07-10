@@ -19,13 +19,6 @@ end
 
 describe Boat do
 
-  describe "::ship" do
-    it "returns boats 20 feet or longer" do
-      boats = ["H 28", "Regulator 34SS", "Zodiac CZ7", "Cape Dory", "Triton 21 TRX", "Sun Tracker Regency 254 XP3"]
-      expect(Boat.ship.pluck(:name)).to eq(boats)
-    end
-  end
-
   describe "::last_three_alphabetically" do
     it "returns last three boats in alphabetical order" do
       boats = ["Zodiac CZ7", "Triton 21 TRX", "Sunfish"]
