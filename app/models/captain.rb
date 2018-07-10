@@ -11,16 +11,12 @@ class Captain < ActiveRecord::Base
   
   def self.talented_seafarers
     includes(boats: :classifications).where(classifications: {name: "Motorboat"}, {name: "Sailboat"})
+  end
+  
+  
 end
 
 describe Captain do
-
-  describe "::talented_seafarers" do
-    it "returns captains of motorboats and sailboats" do
-      captains = ["Captain Cook", "Samuel Axe"]
-      expect(Captain.talented_seafarers.pluck(:name)).to eq(captains)
-    end
-  end
 
   describe "::non_sailors" do
     it "returns people who are not captains of sailboats" do
