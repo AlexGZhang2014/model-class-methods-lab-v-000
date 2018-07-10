@@ -7,5 +7,6 @@ class Classification < ActiveRecord::Base
   end
 
   def longest
+    
   end
 end
