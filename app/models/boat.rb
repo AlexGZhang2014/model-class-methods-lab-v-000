@@ -3,6 +3,10 @@ class Boat < ActiveRecord::Base
   has_many    :boat_classifications
   has_many    :classifications, through: :boat_classifications
   
+  def classifications_size
+    self.classifications.size
+  end
+  
   def self.first_five
     first(5)
   end
