@@ -19,16 +19,13 @@ class Boat < ActiveRecord::Base
     order(:name).last(3)
     #order(:name).reverse.last(3)
   end
+  
+  def self.without_a_captain
+    
+  end
 end
 
 describe Boat do
-
-  describe "::last_three_alphabetically" do
-    it "returns last three boats in alphabetical order" do
-      boats = ["Zodiac CZ7", "Triton 21 TRX", "Sunfish"]
-      expect(Boat.last_three_alphabetically.pluck(:name)).to eq(boats)
-    end
-  end
 
   describe "::without_a_captain" do
     it "returns boats without a captain" do
