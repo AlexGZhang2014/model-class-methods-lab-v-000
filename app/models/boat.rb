@@ -23,16 +23,13 @@ class Boat < ActiveRecord::Base
   def self.without_a_captain
     where(captain: nil)
   end
+  
+  def self.sailboats
+    
+  end
 end
 
 describe Boat do
-
-  describe "::without_a_captain" do
-    it "returns boats without a captain" do
-      boats = ["Harpoon 4.7", "Sunfish"]
-      expect(Boat.without_a_captain.pluck(:name)).to eq(boats)
-    end
-  end
 
   describe "::sailboats" do
     it "returns all boats that are sailboats" do
