@@ -29,7 +29,7 @@ class Boat < ActiveRecord::Base
   end
   
   def self.with_three_classifications
-    where()
+    where("classifications = ?", 3)
   end
 end
 
