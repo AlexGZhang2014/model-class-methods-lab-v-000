@@ -6,10 +6,6 @@ class Classification < ActiveRecord::Base
     all.uniq
   end
 
-  describe "#longest" do
-    it "returns the classifications for the longest boat" do
-      classifications = ["Motorboat", "Center Console"]
-      expect(Classification.longest.pluck(:name)).to eq(classifications)
-    end
+  def longest
   end
 end
