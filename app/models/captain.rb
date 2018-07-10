@@ -13,7 +13,8 @@ class Captain < ActiveRecord::Base
     includes(boats: :classifications).where(classifications: {name: "Motorboat"}, {name: "Sailboat"})
   end
   
-  
+  def self.non_sailors
+    
 end
 
 describe Captain do
