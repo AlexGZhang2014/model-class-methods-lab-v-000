@@ -3,7 +3,9 @@ class Boat < ActiveRecord::Base
   has_many    :boat_classifications
   has_many    :classifications, through: :boat_classifications
   
-  
+  def self.first_five
+    
+  end
 end
 
 describe Boat do
