@@ -2,6 +2,10 @@ class Classification < ActiveRecord::Base
   has_many :boat_classifications
   has_many :boats, through: :boat_classifications
   
+  def self.my_all
+    all.uniq
+  end
+  
   describe "::my_all" do
     it "returns all classifications" do
       classifications = ["Ketch", "Sailboat", "Catamaran", "Sloop", "Motorboat", "Center Console", "RIB", "Trawler", "Cat Rig Boat", "Bass Boat", "Pontoon Boat"]
