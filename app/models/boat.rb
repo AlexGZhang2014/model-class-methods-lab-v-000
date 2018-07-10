@@ -32,14 +32,3 @@ class Boat < ActiveRecord::Base
     where("classifications = ?", 3)
   end
 end
-
-describe Boat do
-
-  describe "::with_three_classifications" do
-    it "returns boats with three classifications" do
-      boats = ["Nacra 17", "Zodiac CZ7", "Sun Tracker Regency 254 XP3"].sort
-      expect(Boat.with_three_classifications.pluck(:name).sort).to eq(boats)
-    end
-  end
-
-end
