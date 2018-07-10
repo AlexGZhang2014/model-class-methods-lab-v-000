@@ -17,13 +17,3 @@ class Captain < ActiveRecord::Base
     includes(boats: :classifications).where.not(classifications: {name: "Sailboat"})
   end
 end
-
-describe Captain do
-
-  describe "::non_sailors" do
-    it "returns people who are not captains of sailboats" do
-      captains = ["William Kyd", "Arel English", "Henry Hudson"]
-      expect(Captain.non_sailors.pluck(:name)).to eq(captains)
-    end
-  end
-end
