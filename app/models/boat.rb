@@ -16,13 +16,6 @@ end
 
 describe Boat do
 
-  describe "::dinghy" do
-    it "returns boats shorter than 20 feet" do
-      boats = ["Nacra 17", "Boston Whaler", "49er", "Laser", "Harpoon 4.7", "Sunfish"]
-      expect(Boat.dinghy.pluck(:name)).to eq(boats)
-    end
-  end
-
   describe "::ship" do
     it "returns boats 20 feet or longer" do
       boats = ["H 28", "Regulator 34SS", "Zodiac CZ7", "Cape Dory", "Triton 21 TRX", "Sun Tracker Regency 254 XP3"]
